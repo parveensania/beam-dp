@@ -20,7 +20,6 @@ package org.apache.beam.runners.dataflow.worker.windmill.client.grpc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -197,6 +196,7 @@ public class GrpcGetWorkerMetadataStreamTest {
   }
 
   @Test
+<<<<<<< HEAD
   public void testGetWorkerMetadata_doesNotConsumeResponseIfMetadataStale() {
     WorkerMetadataResponse freshEndpoints =
         WorkerMetadataResponse.newBuilder()
@@ -238,6 +238,9 @@ public class GrpcGetWorkerMetadataStreamTest {
   @Test
   public void testGetWorkerMetadata_correctlyAddsAndRemovesStreamFromRegistry()
       throws InterruptedException {
+=======
+  public void testGetWorkerMetadata_correctlyAddsAndRemovesStreamFromRegistry() {
+>>>>>>> cf32dc2d068 (Remove metadata version check in GetWorkMetadataStream)
     GetWorkerMetadataTestStub testStub =
         new GetWorkerMetadataTestStub(new TestGetWorkMetadataRequestObserver());
     stream = getWorkerMetadataTestStream(testStub, new TestWindmillEndpointsConsumer());
